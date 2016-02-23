@@ -8,7 +8,7 @@ Small Docker container to run elasticsearch-2
 Usage
 -----
 ```
-docker run --rm -ti -v /home/core/share/data:/data hmalphettes/elasticsearch
+docker run --rm -ti -v /home/core/share/data:/data hmalphettes/alpine-elasticsearch
 ```
 
 Environment variables:
