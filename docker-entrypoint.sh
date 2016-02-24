@@ -26,8 +26,8 @@ fi
 if [ "$(id -u)" = "0" ]; then
   data_owner="$(stat -c %u /data)"
   data_group="$(stat -c %g /data)"
-  addgroup -g "$data_group" elasticsearch || true
-  adduser -u "$data_owner" -g "$data_group" -D elasticsearch || true
+  addgroup -g "$data_group" elasticsearch || addgroup -S -g "$data_group" elasticsearch || true
+  adduser -u "$data_owner" -g "$data_group" -D elasticsearch || adduser -S -u "$data_owner" -g "$data_group" -D elasticsearch || true
   data_owner_name="$(stat -c %U /data)"
   data_group_name="$(stat -c %G /data)"
   for path in /data/data /data/logs "$CONFIG_DIR" "$CONFIG_DIR"/scripts "$PLUGINS_DIR"; do
