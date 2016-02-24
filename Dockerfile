@@ -12,8 +12,9 @@ RUN apk add --update curl ca-certificates sudo && \
   mv /elasticsearch-$VERSION /elasticsearch && \
   rm -rf $(find /elasticsearch | egrep "(\.(exe|bat)$|sigar/.*(dll|winnt|x86-linux|solaris|ia64|freebsd|macosx))") && \
   apk del curl wget ca-certificates && \
-  rm -rf /tmp/* /var/cache/apk/* && \
-  /elasticsearch/bin/elasticsearch --version
+  mkdir -p /elasticsearch/plugins && mkdir -p /data && chown -R nobody:nobody /data  \
+  /elasticsearch/bin/elasticsearch --version && \
+  rm -rf /tmp/* /var/cache/apk/*
 
 # Volume for Elasticsearch data
 VOLUME ["/data"]
