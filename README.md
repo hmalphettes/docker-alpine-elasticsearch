@@ -2,7 +2,7 @@ Small Docker container to run elasticsearch-2
 ---------------------------------------------
 
 - Alpine Linux / Glibc / Zulu-JRE.
-- When launched as root startup script detects the user and group of the data folder and generate an elasticsearch user
+- When launched as root startup script detects the user and group of the data folder and generate an elasticsearch user for it if necessary
 - Small: 100MB
 
 Usage
@@ -20,3 +20,4 @@ Environment variables:
 - MULTICAST=${MULTICAST:-false}
 - CONFIG_DIR=${CONFIG_DIR:-/elasticsearch/config}
 - PLUGINS_DIR=${PLUGINS_DIR:-/elasticsearch/plugins}
+- export MLOCKALL=${MLOCKALL:-false}
