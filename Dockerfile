@@ -7,7 +7,7 @@ ENV VERSION 2.2.1
 
 
 # Install Elasticsearch.
-RUN apk add --update curl ca-certificates sudo && \
+RUN apk add --update tar curl ca-certificates sudo && \
   mkdir /elasticsearch && cd /elasticsearch && \
   ( curl -Lskj https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/$VERSION/elasticsearch-$VERSION.tar.gz | \
   gunzip -c - | tar xf - --strip 1 ) && \
