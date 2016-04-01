@@ -3,7 +3,7 @@ FROM delitescere/java
 # Export HTTP & Transport
 EXPOSE 9200 9300
 
-ENV VERSION 2.2.1
+ENV VERSION 2.3.0
 
 
 # Install Elasticsearch.
